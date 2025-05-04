@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://bmh6jfy5ve8f1"]
+[gd_scene load_steps=11 format=3 uid="uid://bmh6jfy5ve8f1"]
 
 [ext_resource type="PackedScene" uid="uid://dk0i833aa41le" path="res://objects/player/player.tscn" id="1_iuonh"]
+[ext_resource type="Shader" uid="uid://p8srgi383i36" path="res://scenes/main/box.gdshader" id="2_iuonh"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_hyk8p"]
 sky_top_color = Color(0.291416, 0.387093, 0.885752, 1)
@@ -24,11 +25,12 @@ glow_enabled = true
 material = SubResource("StandardMaterial3D_hyk8p")
 size = Vector2(100, 100)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iuonh"]
-albedo_color = Color(1, 0, 1, 1)
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k2fmo"]
+render_priority = 0
+shader = ExtResource("2_iuonh")
 
 [sub_resource type="BoxMesh" id="BoxMesh_hyk8p"]
-material = SubResource("StandardMaterial3D_iuonh")
+material = SubResource("ShaderMaterial_k2fmo")
 
 [node name="Main" type="Node3D"]
 
@@ -47,8 +49,8 @@ shape = SubResource("WorldBoundaryShape3D_iuonh")
 mesh = SubResource("PlaneMesh_iuonh")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.741501, 0.670952, 0, -0.670952, 0.741501, -0.701718, 5.60431, 4.78806)
+transform = Transform3D(0.759884, 0.436158, -0.482019, 0, 0.741501, 0.670952, 0.650058, -0.509846, 0.563455, -6.89997, 5.60431, 4.78806)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.531901, -2.14161)
+transform = Transform3D(0.999998, -0.00217767, 0.00035162, 0.00217802, 0.999997, -0.00100939, -0.000349437, 0.00101015, 0.999999, 0, 0.531901, -2.14161)
 mesh = SubResource("BoxMesh_hyk8p")

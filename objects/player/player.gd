@@ -43,5 +43,5 @@ func _physics_process(delta):
 			velocity.y = 30
 	
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	move_and_slide()
