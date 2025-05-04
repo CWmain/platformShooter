@@ -50,6 +50,7 @@ mesh = SubResource("PlaneMesh_iuonh")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.759884, 0.436158, -0.482019, 0, 0.741501, 0.670952, 0.650058, -0.509846, 0.563455, -6.89997, 5.60431, 4.78806)
+shadow_enabled = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.999998, -0.00217767, 0.00035162, 0.00217802, 0.999997, -0.00100939, -0.000349437, 0.00101015, 0.999999, 0, 0.531901, -2.14161)

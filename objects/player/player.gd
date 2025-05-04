@@ -41,7 +41,6 @@ func _physics_process(delta):
 	else:
 		if Input.is_action_pressed("jump"):
 			velocity.y = 30
-	
 
 func _process(_delta: float) -> void:
 	move_and_slide()
