@@ -21,6 +21,6 @@ func physics_update(delta: float) -> void:
 	if not player.is_on_floor(): # If in the air, fall towards the floor. Literally gravity
 		tranistion.emit(self, get_parent().allStates["Air"])
 	else:
-		if Input.is_action_pressed("jump"):
+		if Input.is_action_just_pressed("jump"):
 			tranistion.emit(self, get_parent().allStates["Jump"])
 			

@@ -1,7 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://dmcfl01nalljg"]
-
-[ext_resource type="Script" uid="uid://86a5xsaf15e7" path="res://objects/player/playerStates/air/air.gd" id="1_vlt7o"]
-
-[node name="Air" type="Node"]
-script = ExtResource("1_vlt7o")
-metadata/_custom_type_script = "uid://bkvs6cho7cc6g"
