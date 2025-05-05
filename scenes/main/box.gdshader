@@ -6,7 +6,12 @@ void vertex() {
 }
 
 void fragment() {
-	ALBEDO = vec3(1.0,0.0,0.0);
+	if (UV.x < 0.1 || UV.x > 0.9 || UV.y < 0.1 || UV.y > 0.9 ){
+		ALBEDO = vec3(0.0,0.0,0.0);
+	}
+	else{
+		ALBEDO = vec3(1.0,0.0,0.0);
+	}
 }
 
 //void light() {
