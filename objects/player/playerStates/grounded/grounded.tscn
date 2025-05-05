@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dle2erad425u3"]
 
-[ext_resource type="Script" uid="uid://bcl5q3vr03j5v" path="res://objects/player/playerStates/grounded.gd" id="1_42si7"]
+[ext_resource type="Script" uid="uid://bcl5q3vr03j5v" path="res://objects/player/playerStates/grounded/grounded.gd" id="1_42si7"]
 
 [node name="Grounded" type="Node"]
 script = ExtResource("1_42si7")

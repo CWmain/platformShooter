@@ -20,8 +20,8 @@ func _ready() -> void:
 	for child: State in get_children():
 		child.tranistion.connect(transistionState)
 		allStates[child.name] = child
-		print(child.name)
 		child.player = player
+	print(allStates)
 	
 func _process(delta: float) -> void:
 	currentState.update(delta)

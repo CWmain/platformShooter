@@ -19,7 +19,7 @@ func physics_update(delta: float) -> void:
 
 	# Vertical Velocity
 	if not player.is_on_floor(): # If in the air, fall towards the floor. Literally gravity
-		player.velocity.y = player.velocity.y - (player.fall_acceleration * delta)
+		tranistion.emit(self, get_parent().allStates["Air"])
 	else:
 		if Input.is_action_pressed("jump"):
 			player.velocity.y = 30
