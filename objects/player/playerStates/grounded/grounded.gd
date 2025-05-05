@@ -22,4 +22,5 @@ func physics_update(delta: float) -> void:
 		tranistion.emit(self, get_parent().allStates["Air"])
 	else:
 		if Input.is_action_pressed("jump"):
-			player.velocity.y = 30
+			tranistion.emit(self, get_parent().allStates["Jump"])
+			
