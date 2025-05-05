@@ -1,6 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dk0i833aa41le"]
+[gd_scene load_steps=6 format=3 uid="uid://dk0i833aa41le"]
 
 [ext_resource type="Script" uid="uid://6i6nhcuul2fg" path="res://objects/player/player.gd" id="1_cqmt1"]
+[ext_resource type="PackedScene" uid="uid://cos1iswar7ll6" path="res://objects/stateMachine/state_machine.tscn" id="2_ssrue"]
+[ext_resource type="PackedScene" uid="uid://dle2erad425u3" path="res://objects/player/playerStates/grounded.tscn" id="3_jnjyq"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5lq1w"]
 
@@ -15,7 +17,13 @@ shape = SubResource("CapsuleShape3D_5lq1w")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("CapsuleMesh_cqmt1")
 
+[node name="StateMachine" parent="." node_paths=PackedStringArray("player", "initialState") instance=ExtResource("2_ssrue")]
+player = NodePath("..")
+initialState = NodePath("Grounded")
+
+[node name="Grounded" parent="StateMachine" instance=ExtResource("3_jnjyq")]
+
 [node name="Pivot" type="Node3D" parent="."]
 
 [node name="Camera3D" type="Camera3D" parent="Pivot"]
-transform = Transform3D(1, 0, 0, 0, 0.994278, 0.106819, 0, -0.106819, 0.994278, -0.0700974, 0.338796, -0.0152047)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0700974, 0.338796, -0.0152047)
