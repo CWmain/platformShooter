@@ -1,9 +1,8 @@
 extends State
 
 func enter()->void:
-	print("Entered air state")
+	pass
 
-	
 func update(delta: float)->void:
 	pass
 
