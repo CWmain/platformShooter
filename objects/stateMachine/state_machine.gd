@@ -4,6 +4,8 @@ class_name StateMachine
 @export var player: Player
 @export var initialState: State
 
+## Generates a dictionary of all States which exist in the state machine, so 
+## the child states can simply reference the name of the state they wish to become
 var allStates: Dictionary[String, State]
 
 var currentState: State:
