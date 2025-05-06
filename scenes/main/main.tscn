@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://bmh6jfy5ve8f1"]
+[gd_scene load_steps=13 format=3 uid="uid://bmh6jfy5ve8f1"]
 
 [ext_resource type="PackedScene" uid="uid://dk0i833aa41le" path="res://objects/player/player.tscn" id="1_iuonh"]
 [ext_resource type="Shader" uid="uid://p8srgi383i36" path="res://scenes/main/box.gdshader" id="2_iuonh"]
 [ext_resource type="PackedScene" uid="uid://boes7s0nc0m76" path="res://objects/box/box.blend" id="3_k2fmo"]
+[ext_resource type="PackedScene" uid="uid://clhnqge3jfo2u" path="res://objects/bullet/bullet.blend" id="4_l3cfh"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_hyk8p"]
 sky_top_color = Color(0.291416, 0.387093, 0.885752, 1)
@@ -59,3 +60,6 @@ mesh = SubResource("BoxMesh_hyk8p")
 
 [node name="box" parent="." instance=ExtResource("3_k2fmo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.95712, 1.81304, -0.764997)
+
+[node name="bullet" parent="." instance=ExtResource("4_l3cfh")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 2.33527, 0, 2.85733)
