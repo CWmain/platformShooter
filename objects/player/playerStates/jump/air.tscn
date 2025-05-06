@@ -5,3 +5,5 @@
 [node name="Air" type="Node"]
 script = ExtResource("1_hm7yt")
 metadata/_custom_type_script = "uid://bkvs6cho7cc6g"
+
+[node name="coyoteTime" type="Timer" parent="."]

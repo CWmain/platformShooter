@@ -15,6 +15,10 @@ run/main_scene="uid://bmh6jfy5ve8f1"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/todomanager/plugin.cfg")
+
 [input]
 
 move_left={

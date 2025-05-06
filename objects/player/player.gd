@@ -7,8 +7,10 @@ class_name Player
 @export var grounded_deceleration: float = 1.0
 
 @export_subgroup("Jump", "jump_")
-# The initial force of the jump in meters per second
+## The initial force of the jump in meters per second
 @export var jump_speed: float = 30
+## The maximum number of jumps the player has before a reset must be hit
+@export var jump_max: int = 1
 # The downward acceleration when in the air, in meters per second squared.
 @export_subgroup("Air", "air_")
 @export var air_acceleration: float = 0.1
@@ -23,6 +25,7 @@ class_name Player
 @onready var camera_3d: Camera3D = $Pivot/Camera3D
 @onready var state_machine: StateMachine = $StateMachine
 
+var remainingJumps: int = 1
 var target_velocity = Vector3.ZERO
 
 func _unhandled_input(event: InputEvent) -> void:

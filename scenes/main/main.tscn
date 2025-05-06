@@ -40,7 +40,8 @@ material = SubResource("ShaderMaterial_k2fmo")
 environment = SubResource("Environment_k2fmo")
 
 [node name="Player" parent="." instance=ExtResource("1_iuonh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.65012, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.815861, 1.59109, 3.96544)
+jump_max = 3
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 
@@ -63,3 +64,27 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.95712, 1.81304, -0.764997)
 
 [node name="bullet" parent="." instance=ExtResource("4_l3cfh")]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 2.33527, 0, 2.85733)
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.127368, 0)
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.72003, 5.08844, 0)
+size = Vector3(1, 10, 20)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="CSGCombiner3D/CSGBox3D"]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0.434418, -2.17514, 0)
+operation = 2
+radius = 4.15186
+height = 6.91327
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.1948, 5.08844, 0)
+size = Vector3(1, 10, 20)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="CSGCombiner3D/CSGBox3D2"]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0.434418, -2.17514, 0)
+operation = 2
+radius = 4.15186
+height = 6.91327

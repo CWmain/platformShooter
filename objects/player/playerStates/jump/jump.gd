@@ -3,6 +3,7 @@ extends State
 
 
 func enter() -> void:
+	player.remainingJumps -= 1
 	player.velocity.y = player.jump_speed
 	
 func update(delta: float) -> void:

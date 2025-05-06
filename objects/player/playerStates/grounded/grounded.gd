@@ -2,7 +2,8 @@ extends State
 
 
 func enter()->void:
-	pass
+	if player != null:
+		player.remainingJumps = player.jump_max 
 	
 func update(delta: float)->void:
 	pass
