@@ -12,6 +12,7 @@
 
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_cqmt1")
+air_acceleration = 0.5
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_5lq1w")

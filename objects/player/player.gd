@@ -1,11 +1,23 @@
 extends CharacterBody3D
 class_name Player
+@export_subgroup("Grounded", "grounded_")
 # How fast the player moves in meters per second.
-@export var speed = 14
-# The downward acceleration when in the air, in meters per second squared.
-@export var fall_acceleration = 75
-@export var mouseSensitivty: float = 0.005
+@export var grounded_speed: float = 14
+@export var grounded_acceleration: float = 0.7
+@export var grounded_deceleration: float = 1.0
 
+@export_subgroup("Jump", "jump_")
+# The initial force of the jump in meters per second
+@export var jump_speed: float = 30
+# The downward acceleration when in the air, in meters per second squared.
+@export_subgroup("Air", "air_")
+@export var air_acceleration: float = 0.1
+@export var air_fall_acceleration: float = 75
+# The highest fall speed in meters per second
+@export var air_max_fall_speed: float = 100
+
+
+@export var mouseSensitivty: float = 0.005
 
 @onready var pivot: Node3D = $Pivot
 @onready var camera_3d: Camera3D = $Pivot/Camera3D

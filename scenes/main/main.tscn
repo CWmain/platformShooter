@@ -51,7 +51,7 @@ shape = SubResource("WorldBoundaryShape3D_iuonh")
 mesh = SubResource("PlaneMesh_iuonh")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.759884, 0.436158, -0.482019, 0, 0.741501, 0.670952, 0.650058, -0.509846, 0.563455, -6.89997, 5.60431, 4.78806)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -5.8581, 5.60431, 4.78806)
 shadow_enabled = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
