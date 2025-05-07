@@ -1,7 +1,6 @@
 extends Node
 class_name StateMachine
 
-@export var player: Player
 @export var initialState: State
 
 ## Generates a dictionary of all States which exist in the state machine, so 
@@ -22,8 +21,7 @@ func _ready() -> void:
 	for child: State in get_children():
 		child.tranistion.connect(transistionState)
 		allStates[child.name] = child
-		child.player = player
-	print(allStates)
+	print("WHY?? ", allStates)
 	
 func _process(delta: float) -> void:
 	currentState.update(delta)

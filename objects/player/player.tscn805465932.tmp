@@ -37,8 +37,3 @@ metadata/_custom_type_script = "uid://5y2q18ed5vts"
 
 [node name="Camera3D" type="Camera3D" parent="Pivot"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0700974, 0.338796, -0.0152047)
-
-[node name="GrappleRayCast3D" type="RayCast3D" parent="Pivot/Camera3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0700974, -0.0707651, 0.0152047)
-target_position = Vector3(0, 0, -50)
-collision_mask = 2

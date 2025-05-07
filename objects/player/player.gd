@@ -23,11 +23,13 @@ class_name Player
 
 @onready var pivot: Node3D = $Pivot
 @onready var camera_3d: Camera3D = $Pivot/Camera3D
-@onready var state_machine: StateMachine = $StateMachine
+@onready var state_machine: PlayerStateMachine = $PlayerStateMachine
+@onready var grapple_ray_cast_3d: RayCast3D = $Pivot/Camera3D/GrappleRayCast3D
 
 var remainingJumps: int = 1
 var target_velocity = Vector3.ZERO
-
+var activateGraple: bool = false
+var last_raycast_position: Vector3 = Vector3.ZERO
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -41,7 +43,23 @@ func _unhandled_input(event: InputEvent) -> void:
 			camera_3d.rotation.x = clampf(camera_3d.rotation.x, -PI/2, PI/2)
 
 func _physics_process(delta):
+	if Input.is_action_just_pressed("grapple") and grapple_ray_cast_3d.is_colliding():
+		activateGraple = true
+		last_raycast_position = grapple_ray_cast_3d.get_collision_point()
+	if Input.is_action_just_released("grapple"):
+		activateGraple = false
+	
+	#TODO Refactor perhaps into state machine or somewhere nicer
+	#TODO Reimplement a nicer grapple
+	if activateGraple:
+		print("Grappling")
+		var position_difference = position - last_raycast_position
+		apply_force(position_difference.normalized(), -15)
+		
 	state_machine.currentState.physics_update(delta)
+
+func apply_force(direction: Vector3, force: float):
+	velocity += direction * force
 
 func _process(_delta: float) -> void:
 	move_and_slide()

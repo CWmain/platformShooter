@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bmh6jfy5ve8f1"]
+[gd_scene load_steps=15 format=3 uid="uid://bmh6jfy5ve8f1"]
 
 [ext_resource type="PackedScene" uid="uid://dk0i833aa41le" path="res://objects/player/player.tscn" id="1_iuonh"]
 [ext_resource type="Shader" uid="uid://p8srgi383i36" path="res://scenes/main/box.gdshader" id="2_iuonh"]
@@ -34,6 +34,10 @@ shader = ExtResource("2_iuonh")
 [sub_resource type="BoxMesh" id="BoxMesh_hyk8p"]
 material = SubResource("ShaderMaterial_k2fmo")
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_l3cfh"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_6q06x"]
+
 [node name="Main" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -41,7 +45,6 @@ environment = SubResource("Environment_k2fmo")
 
 [node name="Player" parent="." instance=ExtResource("1_iuonh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.815861, 1.59109, 3.96544)
-jump_max = 3
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 
@@ -68,6 +71,8 @@ transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 2.33527, 0, 2.85733)
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.127368, 0)
 use_collision = true
+collision_layer = 3
+collision_mask = 3
 
 [node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.72003, 5.08844, 0)
@@ -88,3 +93,21 @@ transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0.4344
 operation = 2
 radius = 4.15186
 height = 6.91327
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.38219, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+shape = SubResource("SphereShape3D_l3cfh")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
+mesh = SubResource("SphereMesh_6q06x")
+
+[node name="RigidBody3D2" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.142337, 2.49983, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D2"]
+shape = SubResource("SphereShape3D_l3cfh")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D2"]
+mesh = SubResource("SphereMesh_6q06x")
